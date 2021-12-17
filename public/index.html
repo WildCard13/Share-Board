@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Openboard</title>
+</head>
+<body>
+    <div class="options-cont">
+            <i class="fas fa-bars" style="color: #161853; font-size: 28px"></i>
+    </div>
+    <div class="tools-cont scale-tools">
+        <img class="pencil" src="Icons/pencil.png">
+        <img class="eraser" src="Icons/eraser.png">
+        <img class="notes" src="Icons/note.png">
+        <img class="download" src="Icons/download.png">
+        <img class="upload" src="Icons/upload.png">
+        <img class="undo" src="Icons/undo.png">
+        <img class="redo" src="Icons/redo.png">
+    </div>
+    <div class="pencil-tool">
+        <div class="pencil-width-cont">
+            <input class ="pencil-width" type="range" min="2" max="10" value="3">
+        </div>
+        <div class="pencil-colour-cont">
+            <div class="black pencil-colour"></div>
+            <div class="dodgerblue pencil-colour"></div>
+            <div class="orangered pencil-colour"></div>
+            <div class="lime pencil-colour"></div>
+        </div>
+    </div>
+    <div class="eraser-tool-cont">
+        <input class ="eraser-width" type="range" min="2" max="18" value="3">
+    </div>
+
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" 
+    integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:5000");
+    </script>
+    <script src="./tool.js"></script>
+    <script src="./canva.js"></script>
+</body>
+</html>
