@@ -23,8 +23,7 @@ io.on("connection", (socket) => {
         io.sockets.emit("drawPath", data);
     })
 
-    socket.on("redoUndo", (data) => {
-        io.sockets.emit("redoUndo", data);
+    socket.on("undoRedo", (data) => {
+        io.sockets.emit("undoRedo", data);
     })
-
 })
